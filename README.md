@@ -1,4 +1,6 @@
-# Glowcloud This repo contains code for a wearable technology project I 
+# Glowcloud 
+
+This repo contains code for a wearable technology project I 
 have been working on off and on for the better part of a decade, now 
 finally under some #$%*& version control. 
 
