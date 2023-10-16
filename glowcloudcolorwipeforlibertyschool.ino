@@ -39,12 +39,12 @@ Adafruit_WS2801 strip = Adafruit_WS2801(25, dataPin, clockPin);
 
 void setup() {
 #if defined(__AVR_ATtiny85__) && (F_CPU == 16000000L)
-  clock_prescale_set(clock_div_1); // Enable 16 MHz on Trinket (or on Gemma? I think so so I'm leaving it in
+  clock_prescale_set(clock_div_1); // Enable 16 MHz on Trinket (or on Gemma? I think so so I'm leaving it in)
 #endif
   pinMode(SWITCH, INPUT);   
   digitalWrite(SWITCH, HIGH); //this statement define the pullup resistor
   
-  strip.begin(); //this... initializes the strip
+  strip.begin(); //this initializes the strip
   strip.show();  //this updates the LED instructions to a starting position of "off"
   colorWipe(Color(99, 1, 3), 50); //setting starting colorwipe for blue (for now)
 } 
@@ -65,7 +65,8 @@ void colorWipe(uint32_t c, uint8_t wait) {   //i think this is where colorWipe i
   }
 }
 
-
+// SEE https://github.com/adafruit/Adafruit-WS2801-Library/blob/master/examples/strandtest/strandtest.pde for 
+// original strand test code for the source of some of these procedures.
 // Slightly different, this one makes the rainbow wheel equally distributed 
 // along the chain
 void rainbowCycle(uint8_t wait) {
