@@ -57,11 +57,27 @@ void setup() {
 //  rainbowCycle(20);
 } 
 // colorwipe fills the dots one after the other with said color
+// putting procedures in the loop makes them run over and over again in sequence, not in response to the switch. 
+// put procedures after the setting == 2 statement to line them up available to the switch presses. 
 
 void loop(){
-// putting procedures in the loop makes them run over and over again in sequence, not in response to the switch
-colorWipe(Color(99, 1, 3), 50); //setting starting colorwipe on a rosy red 
-colorWipe(Color(0, 255, 0), 50); //this is an electric green
+if (SETTING == 0){ 
+    colorWipe(Color(25, 25, 112), 50); //this is a midnight blue colorWipe
+  
+  }
+  if (digitalRead(SWITCH)==LOW){  
+ //   delay(DEBOUNCE);
+    SETTING = ++SETTING % 3;
+  }
+  if (SETTING == 1){
+     colorWipe(Color(139, 0, 0), 50); //this is a maroon colorWipe
+  }
+  if (SETTING == 2){
+    colorWipe(Color(99, 1, 3), 50); //setting starting colorwipe on a rosy red 
+  } 
+  if (SETTING == 3){
+    colorWipe(Color(0, 255, 0), 50); //this is an electric green
+  }
 }
 
 // SEE https://github.com/adafruit/Adafruit-WS2801-Library/blob/master/examples/strandtest/strandtest.pde for 
