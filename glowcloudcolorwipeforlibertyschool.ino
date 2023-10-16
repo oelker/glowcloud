@@ -46,13 +46,28 @@ void setup() {
   
   strip.begin(); //this initializes the strip
   strip.show();  //this updates the LED instructions to a starting position of "off"
-  colorWipe(Color(99, 1, 3), 50); //setting starting colorwipe for blue (for now)
+  //putting procedures under strip.show() has it run through these procedures in order, not in respond to switch presses.
+  
+  
+//  The actual definition of colorwipe as a helper function is further down, after the first void loop which 
+//  is the one the board will actually run.
+//  The following are some other procedures we could add to the switch
+//  colorWipe(Color(0, 0, 255), 50);
+//  rainbow(20);
+//  rainbowCycle(20);
 } 
 // colorwipe fills the dots one after the other with said color
 
 void loop(){
-
+// putting procedures in the loop makes them run over and over again in sequence, not in response to the switch
+colorWipe(Color(99, 1, 3), 50); //setting starting colorwipe on a rosy red 
+colorWipe(Color(0, 255, 0), 50); //this is an electric green
 }
+
+// SEE https://github.com/adafruit/Adafruit-WS2801-Library/blob/master/examples/strandtest/strandtest.pde for 
+// original strand test code for the source of these procedures and helper functions.
+// Slightly different, this one makes the rainbow wheel equally distributed 
+// along the chain
 
 void colorWipe(uint32_t c, uint8_t wait) {   //i think this is where colorWipe is defined?
  
@@ -65,10 +80,7 @@ void colorWipe(uint32_t c, uint8_t wait) {   //i think this is where colorWipe i
   }
 }
 
-// SEE https://github.com/adafruit/Adafruit-WS2801-Library/blob/master/examples/strandtest/strandtest.pde for 
-// original strand test code for the source of some of these procedures.
-// Slightly different, this one makes the rainbow wheel equally distributed 
-// along the chain
+
 void rainbowCycle(uint8_t wait) {
   int i, j;
   
