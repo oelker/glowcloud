@@ -67,7 +67,7 @@ if (SETTING == 0){
   }
   if (digitalRead(SWITCH)==LOW){  
  //   delay(DEBOUNCE);
-    SETTING = ++SETTING % 3;
+    SETTING = (SETTING+1) % 4;
   }
   if (SETTING == 1){
      colorWipe(Color(139, 0, 0), 50); //this is a maroon colorWipe
