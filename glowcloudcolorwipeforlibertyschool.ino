@@ -73,10 +73,10 @@ if (SETTING == 0){
      colorWipe(Color(139, 0, 0), 50); //this is a maroon colorWipe
   }
   if (SETTING == 2){
-    colorWipe(Color(99, 1, 3), 50); //setting starting colorwipe on a rosy red 
+    rainbowCycle(250); // this is a rainbow color cycle with a 250ms wait time
   } 
   if (SETTING == 3){
-    colorWipe(Color(0, 255, 0), 50); //this is an electric green
+    Wheel(125); //this is a color wheel starting with the color 125 in a 255 color space
   }
 }
 
